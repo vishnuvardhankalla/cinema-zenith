@@ -1,15 +1,30 @@
+import { MoviesHeaderBar } from "@/components/movies/MoviesHeaderBar";
+import { MoviesHeroCarousel } from "@/components/movies/MoviesHeroCarousel";
+import { NowPlayingGrid } from "@/components/movies/NowPlayingGrid";
+import { ComingSoonRow } from "@/components/movies/ComingSoonRow";
+import { MovieOffersStrip } from "@/components/movies/MovieOffersStrip";
+import { TheatreAccessPlaceholder } from "@/components/movies/TheatreAccessPlaceholder";
+
 export const Movies = () => {
   return (
-    <section 
-      className="container mx-auto px-4 py-8"
-      data-testid="movies-page"
-    >
-      <h1 className="text-3xl font-bold mb-4 bg-gradient-glow bg-clip-text text-transparent">
-        Movies
-      </h1>
-      <p className="text-muted-foreground">
-        Empty screen. Nav wired.
-      </p>
-    </section>
+    <div data-testid="movies-page">
+      {/* Header with Filters */}
+      <MoviesHeaderBar />
+      
+      {/* Hero Carousel for Featured Movies */}
+      <MoviesHeroCarousel />
+      
+      {/* Now Playing Movies Grid */}
+      <NowPlayingGrid />
+      
+      {/* Coming Soon Movies Row */}
+      <ComingSoonRow />
+      
+      {/* Movie Offers Strip */}
+      <MovieOffersStrip />
+      
+      {/* Theatre Access Placeholder */}
+      <TheatreAccessPlaceholder />
+    </div>
   );
 };
