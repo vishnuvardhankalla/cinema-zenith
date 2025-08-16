@@ -4,6 +4,7 @@ import { NowPlayingGrid } from "@/components/movies/NowPlayingGrid";
 import { ComingSoonRow } from "@/components/movies/ComingSoonRow";
 import { MovieOffersStrip } from "@/components/movies/MovieOffersStrip";
 import { TheatreAccessPlaceholder } from "@/components/movies/TheatreAccessPlaceholder";
+import { MoviesFooter } from "@/components/movies/MoviesFooter";
 
 export const Movies = () => {
   return (
@@ -25,6 +26,9 @@ export const Movies = () => {
       
       {/* Theatre Access Placeholder */}
       <TheatreAccessPlaceholder />
+      
+      {/* Footer */}
+      <MoviesFooter />
     </div>
   );
 };
