@@ -1,44 +1,36 @@
-import { HeroCarousel } from "@/components/home/HeroCarousel";
-import { TrendingMoviesRow } from "@/components/home/TrendingMoviesRow";
-import { FeaturedEventsGrid } from "@/components/home/FeaturedEventsGrid";
-import { LocationPrompt } from "@/components/home/LocationPrompt";
-import { PersonalizedRow } from "@/components/home/PersonalizedRow";
-import { OffersStrip } from "@/components/home/OffersStrip";
-import { PopularVenuesGrid } from "@/components/home/PopularVenuesGrid";
-import { EngagementStrip } from "@/components/home/EngagementStrip";
-import { FooterLinks } from "@/components/home/FooterLinks";
-
 export const Home = () => {
   return (
-    <div className="min-h-screen" data-testid="home-page">
-      {/* Location Prompt - Shows if no city selected */}
-      <LocationPrompt />
+    <div data-testid="home-page">
+      <div className="section">
+        <h1>Welcome to TicketHub</h1>
+        <p className="muted">Your one-stop destination for movies, events, and entertainment.</p>
+      </div>
       
-      {/* Hero Carousel */}
-      <section className="container mx-auto px-4 py-6">
-        <HeroCarousel />
-      </section>
+      <div className="section">
+        <h2>Featured Movies</h2>
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
+          {[1, 2, 3, 4].map(i => (
+            <div key={i} className="card" style={{ padding: '16px', textAlign: 'center' }}>
+              <div className="skeleton" style={{ height: '280px', marginBottom: '12px' }}></div>
+              <h3>Movie {i}</h3>
+              <p className="muted">Coming Soon</p>
+            </div>
+          ))}
+        </div>
+      </div>
       
-      {/* Trending Movies */}
-      <TrendingMoviesRow />
-      
-      {/* Featured Events */}
-      <FeaturedEventsGrid />
-      
-      {/* Top Picks for You */}
-      <PersonalizedRow />
-      
-      {/* Offers & Promotions */}
-      <OffersStrip />
-      
-      {/* Popular Venues */}
-      <PopularVenuesGrid />
-      
-      {/* Engagement Section */}
-      <EngagementStrip />
-      
-      {/* Footer */}
-      <FooterLinks />
+      <div className="section">
+        <h2>Popular Events</h2>
+        <div className="scroll-x">
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="card" style={{ minWidth: '250px', padding: '16px' }}>
+              <div className="skeleton" style={{ height: '150px', marginBottom: '12px' }}></div>
+              <h4>Event {i}</h4>
+              <p className="muted">This Weekend</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { TopBar } from './TopBar';
 import { SideNav } from './SideNav';
 import { BottomTabs } from './BottomTabs';
+import { Toaster } from '../ui/toaster';
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ export const Layout = ({ children }: LayoutProps) => {
         </main>
       </div>
       <BottomTabs />
+      <Toaster />
     </>
   );
 };
